@@ -1,0 +1,13 @@
+{% extends "proyectowebapp/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="contenedorFormulario">
+    <form method="POST" class="form-group" style="color: white;">
+        {% csrf_token %} <!--Token de seguridad-->
+        {{form|crispy}}
+        <button type="submit" class="btn btn-success">Registrarse</button>
+    </form>
+</div>
+{% endblock %}

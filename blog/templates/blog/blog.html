@@ -1,0 +1,44 @@
+{% extends "proyectowebapp/base.html" %} <!--Herencia del hmtl base-->
+
+{% load static %}
+
+{% block content %}
+
+    <section>
+        <div style="width: 75%;  color: white; margin: auto; text-align: center;">
+            
+            Categorías: 
+            {% for post in posts %}
+
+                {% for categoria in post.categorias.all %} <!--bucle para sacar las categorias de los posts e incorporarlas al html-->
+
+                <a class="linksCategorias" href="{% url 'categoria' categoria.id %}">{{categoria.nombre}}</a>&nbsp;&nbsp; 
+
+            
+                {% endfor %}
+            
+            {% endfor %}
+        </div>
+    </section>
+
+    {% for post in posts %} <!--bucle para sacar todos los posts e incorporarlos al html-->
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="" style="width: 50%;">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4" >
+                <span class="section-heading-lower">{{post.titulo}}</span>
+              </h2>
+              <p class="mb-3">{{post.descripcion}}
+              </p>
+                <div style="text-align: left; font-size: 0.8em;">
+                        Autor: {{post.autor}}
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "proyectowebapp/base.html" %} 
+
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="contenedorFormulario">
+    <form method="post" class="form-group" style="color: white;">
+        {% csrf_token %}<!--Token de seguridad-->
+        {{form|crispy}} 
+        <p>Si no tienes una cuenta, puedes crear una <a href="/register">aquí</a></p> <!--Enlace para registarse-->
+        <button type="submit" class="btn btn-success">Login</button>
+        
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "proyectowebapp/base.html" %} <!--Herencia del hmtl base-->
+
+{% load static %}
+
+{% block content %}
+<div class="contenedorFormulario">
+
+    {% if "valido" in request.GET %} <!--Si el formulario no contiene nungún error, se enviará-->
+
+        <p style="color: white;">Informacion enviada correctamente, gracias</p>
+
+    {% endif %}
+
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %} <!--Token de seguridad-->
+        <table style="color: white; margin: 20px auto;">{{formulario.as_table}}</table>
+        <input type="submit" value="Enviar" style="width: 100px">
+        <input type="reset" value="Limpiar" style="width: 100px">
+    </form>
+</div>
+
+{% endblock %}

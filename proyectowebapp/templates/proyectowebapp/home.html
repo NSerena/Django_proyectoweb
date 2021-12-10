@@ -1,0 +1,44 @@
+
+{% extends "proyectowebapp/base.html" %} <!--Herencia del hmtl base-->
+
+{% load static %}
+
+{% block content %}
+
+   <!-- Contenido central -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{%static 'proyectowebapp/img/fotoabuela.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">Las mejores recetas</span>
+          </h2>
+          <p class="mb-3">Las recetas sencillas de toda la vida
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Segunda parte -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Podrás añadir nuevas recetas de</span>
+                <span class="section-heading-lower">FORMA FÁCIL</span>
+              </h2>
+              <p class="mb-0">Sólo tienes que acceder a la pestaña de login, iniciar sesión (o registrarte) y ya formarás parte de este recetario grupal.<br>Si tienes alguna consulta, puedes contactarnos a través de la pestaña Contacto</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
